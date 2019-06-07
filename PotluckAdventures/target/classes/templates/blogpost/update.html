@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Update Post</title>
+         <!-- Bootstrap -->
+        <div th:replace="fragments/headLinks :: headLinks" ></div>
+         <!-- Custom css -->
+         <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+    	<div th:replace="fragments/navbar :: navbar" ></div>
+        <div class="container">
+            
+            <div class="jumbotron">
+                <h1 class="display-4">This is for updating hoes</h1>
+            </div>
+
+            <div class="row">
+
+                <div class="card bg-primary p-2">
+                    <div class="card-head">
+                        <h2 style="color: black">Edit this blog post</h2>
+                        <h4 id="test" style="color: black">Think twice, type once.</h4>
+                    </div>
+                    <div class="card-body">
+
+                        <!--  th:action="@{'/edit/update/{id}' (id=${blog.id})}" th:object="${blogPost}" method="PUT" -->
+                        <!-- th:action="@ {'/update/{id}' (id=${posts.id})}" method="put" -->
+                        <!-- Thymeleaf has conditional operator: condition ? first_expression : second_expression; -->
+                        <!--  th:action="@{'/update/{id}' (id=${posts.id})}" th:method="${posts.id} != null ? PUT : POST" modelAttribute="posts" th:object="${posts}" -->
+                        
+                        <form th:action="@{'/update/{id}' (id=${id})}" th:object="${posts}" th:method="put">
+                        
+                            <input style="visibility:hidden" id="disId" th:field="*{id}" />
+                            <div class="form-group">
+                                <label style="color: black" for="title">Title:</label>
+                                <input class="form-control" id="title" type="text" th:field="*{postTitle}" />
+                            </div>
+                            
+                            <div class="form-group">
+                                <label style="color: black" for="author">Author:</label>
+                                <input class="form-control" id="author" type="text" th:field="*{postAuthor}" />
+                            </div>
+
+                            <div class="form-group">
+                                <label style="color: black" for="postBody">Blog Entry:</label>
+                                <textarea class="form-control"  id="postBody" type="text" th:field="*{postBody}"></textarea>
+                            </div>
+
+                            <button class="btn btn-success" id="upDater" type="submit">Submit Your Post</button>
+
+                        </form>
+                    </div>
+                </div>
+                
+
+            </div>
+
+        </div>
+        
+    </body>
+    <footer>
+        <script src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+        <!-- Custom js -->
+        <script src="../javascript/main.js"></script>
+    </footer>
+</html>

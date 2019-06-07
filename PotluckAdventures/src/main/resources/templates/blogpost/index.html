@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+    <html lang="en">
+
+    <html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>My first page!</title>
+        <!-- Bootstrap -->
+        <!-- Jar dependency of bootstrap -->
+        <div th:replace="fragments/headLinks :: headLinks" ></div>
+        <!-- Custom css -->
+        <link href="css/style.css" rel="stylesheet">
+        
+    </head>
+
+    <body>
+
+        <div th:replace="fragments/navbar :: navbar" ></div>
+
+
+        <div class="container">
+            
+            <div id="myHead" class="jumbotron">
+                <h1 class="border-bottom border-dark" style="width:fit-content">Jinkies Batman!!</h1>
+                <h4 class="border-bottom border-dark" style="width:fit-content">Did you know that Java could actually do something?</h4>
+                <a th:href="@{/new}">
+                    <button class= "btn btn-primary">
+                        Submit a New Blog Post
+                    </button>
+                </a>
+                
+                <a th:href="@{/crystalGame}">
+                	<button class="btn btn-success">Play crystal game</button>
+            	</a>
+            	
+            	<a th:href="@{/rpsGame}">
+                	<button class="btn btn-success">Play RPS</button>
+            	</a>
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-3">
+                    <img src="https://cdn.pixabay.com/photo/2017/11/09/21/41/cat-2934720__340.jpg" />
+                </div>
+
+            </div> <!-- End first row -->
+
+            <div class="row">
+                <div th:each="blog:${posts}">
+                    <div class="col">
+                        <div class="card border border-success">
+                            <div class="card-head postHead">
+                                <p th:text="${blog.id}" />
+                                <label for="post_title">Title</label>
+                                <p name="post_title" id="post_title" th:text="${blog.postTitle}"/>
+                            </div>
+                            <div class="card-body postBody">
+                            	<label for="post_author">Author</label>
+                                <p name="post_author" id="post_author" th:text="${blog.postAuthor}"/>
+                                <label for="post_body">Body</label>
+                                <p name="post_body" id="post_body" th:text="${blog.postBody}" />
+                                <!-- Link to Update -->
+                                
+                                <a th:href="@{'/show/{id}'(id=${blog.id})}">
+                                	<button class="btn btn-info">See as single post</button>
+                            	</a>
+                            	
+                            	<a th:href="@{'/update/{id}'(id=${blog.id})}">
+                                	<button class="btn btn-warning">Update Blog Post</button>
+                            	</a>
+                    
+
+                                <!--  Link to Destroy -->
+                                <form action="#" th:action="@{'/{id}'(id=${blog.id})}" th:method="delete"class="form-horizontal">
+                                    <div class="form-group">
+                                        <input type="hidden" name="_method" value="delete"/>
+                                        <button type="submit" class="btn btn-danger btn-block" th:text="Delete">Delete</button>
+                                    </div>
+                                </form>
+                                <!-- Link to Show  -->
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        
+    </body>
+
+    <footer>
+        <!-- Jar dependencies of bootstrap and jquery -->
+         <div th:replace="fragments/footerLinks :: footerLinks" ></div>
+        <!-- Custom css -->
+        <script src="javascript/main.js"></script>
+    </footer>
+
+</html>
+
+        
+        

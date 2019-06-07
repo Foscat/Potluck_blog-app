@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Deleted post page</title>
+        <!-- Bootstrap -->
+        <!-- Jar dependency of bootstrap -->
+        <div th:replace="fragments/headLinks :: headLinks" ></div>
+        <!-- Custom css -->
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+
+        <div th:replace="fragments/navbar :: navbar" ></div>
+
+        <div id="myHead" class="jumbotron">
+            <h1 class="border-bottom border-dark" style="width:fit-content">Way to go you deleted something!</h1>
+            <h4 class="border-bottom border-dark" style="width:fit-content">Did you you think were gonna get the same errors as before? Y/N</h4>
+            <a th:href="@{/new}">
+                <button class= "btn btn-primary">
+                    Submit a New Blog Post
+                </button>
+            </a>
+            <a th:href="@{/}">
+                <button class= "btn btn-success">
+                    Go back Home
+                </button>
+            </a>
+        </div>
+        
+    </body>
+    <footer>
+        <!-- Jar dependencies of bootstrap and jquery -->
+       <div th:replace="fragments/footerLinks :: footerLinks" ></div>
+        <!-- Custom css -->
+        <script src="javascript/main.js"></script>
+    </footer>
+</html>

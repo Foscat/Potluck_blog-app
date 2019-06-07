@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Results Page</title>
+        <!-- Bootstrap -->
+        <div th:replace="fragments/headLinks :: headLinks" ></div>
+        <!-- Custom css -->
+        <link href="css/style.css" rel="stylesheet">
+        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+    </head>
+
+
+    <body>
+        
+        <div th:replace="fragments/navbar :: navbar" ></div>
+
+        <div class="container">
+
+            <div id="myHead" class="jumbotron">
+                <h1>Results page</h1>
+            </div>
+
+            <div class="row ">
+                
+                <div class="col">
+                    <div class="card bg-secondary border border-warning">
+                        <div class="card-head">
+                            <label for="postTitle">Title:</label>
+                            <h3 id="postTitle" th:text="${postTitle}" />
+                        </div>
+                        <div class="card-body">
+                            <label for="postAuthor">Author:</label>
+                            <p id="postAuthor" th:text="${postAuthor}"/>
+                            <label for="postBody">Body:</label>
+                            <p id="postBody" th:text="${postBody}" />
+                            <a th:href="@{/}">
+                                <button class="btn btn-success">Back To Home Page</button>
+                            </a>
+                            <a th:href="@{/new}">
+                                <button class="btn btn-primary">Submit a New Blog Post</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqVLORN2pl51PWLXekfGHdHGD1Cnt_70RwUG2sUQgFv8wyOAo8oQ" />
+                </div>
+            </div>
+        </div>
+        
+    </body>
+
+    <footer>
+        <div th:replace="fragments/footerLinks :: footerLinks" ></div>
+        <!-- Custom js -->
+        <script src="javascript/main.js"></script>
+    </footer>
+</html>

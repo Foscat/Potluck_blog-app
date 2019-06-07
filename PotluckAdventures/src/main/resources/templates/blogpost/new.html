@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <html xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>New Blog Page</title>
+        <!-- Bootstrap  -->
+        <div th:replace="fragments/headLinks :: headLinks" ></div>
+        <!-- Custom css -->
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <div th:replace="fragments/navbar :: navbar" ></div>
+        
+        <div class="container">
+            <div id="myHead" class="jumbotron">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h1>Welcome to the best blog post site on the triple W!!!</h1>
+                    </div>
+                    <div class="col-md-5">
+                        <img style="width: 100%; height: 100%;" th:src="@{/images/wwwMap.png}"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-5">
+                <div class="card bg-primary p-2">
+                    <div class="card-head">
+                        <h2 style="color: black">Make a blog post</h2>
+                        <h4 style="color: black">We are dying to hear your opinion..</h4>
+                    </div>
+                    <div class="card-body">
+                        <form action="#" th:action="@{/new}" th:object="${blogPost}" method="post">
+
+                            <div class="form-group">
+                                <label style="color: black" for="title">Title:</label>
+                                <input class="form-control" id="title" type="text" th:field="*{postTitle}" />
+                            </div>
+                            
+                            <div class="form-group">
+                                <label style="color: black" for="author">Author:</label>
+                                <input class="form-control" id="author" type="text" th:field="*{postAuthor}" />
+                            </div>
+
+                            <div class="form-group">
+                                <label style="color: black" for="postBody">Blog Entry:</label>
+                                <textarea class="form-control" id="postBody" type="text" th:field="*{postBody}" />
+                            </div>
+
+                            <button class="btn btn-success" type="submit">Submit Your Post</button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </body>
+
+    <footer>
+         <div th:replace="fragments/footerLinks :: footerLinks" ></div>
+        <!-- Custom js -->
+        <script src="javascript/main.js"></script>
+    </footer>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Rock Paper scissors</title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    </head>
+    <body  style="background-color: rgb(143, 73, 102)">
+        <div th:replace="fragments/navbar :: navbar" ></div>
+        <div class="container"  style="background-color: rgb(206, 206, 206)">
+
+            <div class="row">
+                <div class="jumbotron">
+                    <h2>
+                        Select a answer by clicking "Rock", "Paper" or "Scissors" button the click "Start Game" 
+                        to get computer answer
+                    </h2>
+                    <hr>
+                        
+                    <h4 id="scoreCard">
+                        Score will display here.
+                    </h4>
+
+                    <h4 id="myAnswer">
+                        Your answer will be shown here.
+                    </h4>
+                    
+                </div>
+
+                <div class="row m-1" id="valBox">
+                    <button class="btn btn-dark m-1" id="rock" type="button">Rock</button>
+                    <button class="btn btn-secondary m-1" id="paper" type="button">Paper</button>
+                    <button class="btn btn-info m-1" id="scissors" type="button">Scissors</button>
+                </div>
+
+            </div>
+            <hr>
+            <div class="row m-2">
+                <button class="btn btn-primary m-1" id="start" type="button">Start Game</button>
+            </div>
+
+        </div>
+        
+    </body>
+
+    <footer>
+        <script src="javascript/script.js"></script>
+    </footer>
+</html>

@@ -1,0 +1,26 @@
+
+.container {
+    background-color: rgba(255, 255, 255, 0.8);
+	margin-top: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-radius: 5px; 
+}
+body {
+    background-color: rgb(245, 217, 157);
+    color: black;
+}
+#myHead {
+    background-color: rgb(199, 199, 199);
+    color: darkcyan;
+}
+.postHead{
+    background-color: rgb(90, 172, 144)
+}
+.postBody{
+    background-color: rgb(147, 247, 147)
+}
+p {
+    background-color: rgba(245, 211, 153, 0.295);
+    width: fit-content;
+}

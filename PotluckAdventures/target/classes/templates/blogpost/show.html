@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Show Post</title>
+         <!-- Bootstrap -->
+         <div th:replace="fragments/headLinks :: headLinks" ></div>
+         <!-- Custom css -->
+         <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div th:replace="fragments/navbar :: navbar" ></div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card bg-primary">
+                        <div class="card-head bg-info">
+                            <h1 th:text="*{posts.postTitle}"></h1>
+                            <h3 th:text="*{posts.postAuthor}"></h3>
+                        </div>
+                        <div class="card-body bg-light">
+                            <p th:text="*{posts.postBody}"></p>
+                            <a th:href="@{'/update/{id}'(id=${posts.id})}">
+                                <button class="btn btn-warning">Update Post</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </body>
+    <footer>
+        <div th:replace="fragments/footerLinks :: footerLinks" ></div>
+        <!-- Custom js -->
+        <script src="javascript/main.js"></script>
+    </footer>
+</html>

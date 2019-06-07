@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <!-- Jar dependency of bootstrap -->
+        <link href="../webjars/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" />
+        <!-- Custom css -->
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div th:fragment="navbar">
+            
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <a class="nav-item nav-link" th:href="@{/}">Home</a>
+                <a class="nav-item nav-link" th:href="@{/new}">New Post</a>
+
+              </div>
+            </div>
+			    </nav>
+            
+        </div>
+    
+    </body>
+    <footer>
+        <!-- Jar dependencies of bootstrap and jquery -->
+        <script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+        <script src="webjars/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <!-- Custom js -->
+        <script src="javascript/main.js"></script>
+    </footer>
+</html>
