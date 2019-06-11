@@ -124,29 +124,7 @@ public class BlogPostController {
 	@GetMapping("/rpsGame")
 	public String getRPSGame(BlogPost blogpost, Model model) {
 		return "games/rpsGame";
-	}
-	// @PutMapping("/update/{id}")
-	// public String replaceBlogPost(@RequestBody BlogPost newPost, @PathVariable Long id) {
-	//   return blogPostRepository.findById(id)
-	// 	.map(blogPost -> {
-	// 		blogPost.setPostTitle(newPost.getPostTitle());
-	// 		blogPost.setPostAuthor(newPost.getPostAuthor());
-	// 		blogPost.setPostBody(newPost.getPostBody());
-	// 		blogPostRepository.save(newPost);
-	// 		return "blogpost/index";
-		   
-	// 	})
-	// 	.orElseGet(() -> {
-	// 	  newPost.setId(id);
-	// 	 blogPostRepository.save(newPost);
-	// 	 return "blogpost/index";
-		 
-	// 	});
-//	}
-
-
-
-	
+	}	
 	
 }
 
